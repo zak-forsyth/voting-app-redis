@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "aksresearch1-4d20"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "aksresearch1-4d20"
+  template:
+    metadata:
+      labels:
+        app: "aksresearch1-4d20"
+    spec:
+      containers:
+        - name: "aksresearch1-4d20"
+          image: "aksresearchazurevote.azurecr.io/aksresearch1"
+          ports:
+          - containerPort: 80
